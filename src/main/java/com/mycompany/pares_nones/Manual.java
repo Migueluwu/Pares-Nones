@@ -18,12 +18,15 @@ public class Manual {
     public static void main(String[] args) {
         // TODO code application logic here
        Scanner entradaTeclado = new Scanner(System.in);
-       boolean eleccion;
+       int eleccion;
        int numero1;
        int numero2;
+       do{ 
         System.out.println("El jugador 1 tiene que elegir pares o nones");
         System.out.println("Escribe 1 para elegir pares y 2 para elegir nones");
-        
+        eleccion=entradaTeclado.nextInt();
+       }while(eleccion<1||eleccion>2);
+        System.out.println(eleccion);
         
         
     }
