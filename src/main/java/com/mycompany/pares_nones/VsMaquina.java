@@ -33,13 +33,20 @@ public class VsMaquina {
             System.out.println("Jugador 1, escribe del 0 10 cuantos dedos enseñas:");
             numero1 = entradaTeclado.nextInt();
         } while (numero1 > 10 || numero1 < 0);
-        numero2=numAleatorio.nextInt(10)+1;
-        System.out.println("la maquina elige "+numero2);
+        numero2 = numAleatorio.nextInt(10) + 1;
+        if(eleccion==1){
+            System.out.println("el jugador eligio pares");
+        }else{
+            System.out.println("el jugador eligio nones");
+        }
+        System.out.println("el jugador elige "+numero1);
+        System.out.println("la maquina elige " + numero2);
         suma = numero1 + numero2;
+        
         if (suma % 2 == 0 && eleccion == 1) {
-            System.out.println("gana el jugador 1");
+            System.out.println("gana el jugador");
         } else if (suma % 2 != 0 && eleccion == 2) {
-            System.out.println("gana el jugador 1");
+            System.out.println("gana el jugador");
         } else {
             System.out.println("gana la maquina");
         }
