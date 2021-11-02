@@ -26,9 +26,14 @@ public class Manual {
         System.out.println("Escribe 1 para elegir pares y 2 para elegir nones");
         eleccion=entradaTeclado.nextInt();
        }while(eleccion<1||eleccion>2);
-        System.out.println(eleccion);
-        
-        
+       do{
+        System.out.println("Jugador 1, escribe del 0 10 cuantos dedos enseñas:");
+        numero1=entradaTeclado.nextInt();
+       }while(numero1>10||numero1<0);
+        do{
+        System.out.println("Jugador 2, escribe del 0 10 cuantos dedos enseñas:");
+        numero2=entradaTeclado.nextInt();
+       }while(numero2>10||numero2<0);
     }
     
 }
