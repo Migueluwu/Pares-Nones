@@ -1,6 +1,7 @@
 //https://github.com/Migueluwu/Pares-Nones.git
 package com.mycompany.pares_nones;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -15,26 +16,47 @@ public class Manual {
     public static void main(String[] args) {
         // declaracion de variables
         Scanner entradaTeclado = new Scanner(System.in);
-        int eleccion;
-        int numero1;
-        int numero2;
+        int eleccion=0;
+        int numero1=11;
+        int numero2=11;
         int suma;
+        boolean continuar=false;
         //bucle para elegir pares o nones
         do {
             System.out.println("El jugador 1 tiene que elegir pares o nones");
             System.out.println("Escribe 1 para elegir pares y 2 para elegir nones");
+            try{
             eleccion = entradaTeclado.nextInt();
-        } while (eleccion < 1 || eleccion > 2);
+            continuar=true;
+            }catch(InputMismatchException ime){
+                System.out.println("Valor introducido no valido");
+                entradaTeclado.nextLine();
+            }
+        } while ((eleccion < 1 || eleccion > 2)||continuar==false);
         //bucle para elegir cuantos dedos saca el jugador 1
+        continuar=false;
         do {
             System.out.println("Jugador 1, escribe del 0 10 cuantos dedos enseñas:");
+            try{
             numero1 = entradaTeclado.nextInt();
-        } while (numero1 > 10 || numero1 < 0);
+            continuar=true;
+            }catch(InputMismatchException ime){
+                System.out.println("Valor introducido no valido");
+                entradaTeclado.nextLine();
+            }
+        } while ((numero1 > 10 || numero1 < 0)||continuar==false);
+        continuar=false;
         //bucle para elegir cuantos dedos saca el jugador 2
         do {
             System.out.println("Jugador 2, escribe del 0 10 cuantos dedos enseñas:");
+            try{
             numero2 = entradaTeclado.nextInt();
-        } while (numero2 > 10 || numero2 < 0);
+            continuar=true;
+            }catch(InputMismatchException ime){
+                System.out.println("Valor introducido no valido");
+                entradaTeclado.nextLine();
+            }
+        } while ((numero2 > 10 || numero2 < 0)||continuar==false);
         //suma de numeros totales
         suma = numero1 + numero2;
         //salida por pantalla para recordar lo que se ha elegido
@@ -54,6 +76,7 @@ public class Manual {
         } else {//si no cumple las condiciones para que gane el jugador 1 gana el jugador 2
             System.out.println("gana el jugador 2");
         }
-    }
+    
 
+}
 }
