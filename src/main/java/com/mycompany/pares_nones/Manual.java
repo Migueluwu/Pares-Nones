@@ -20,43 +20,42 @@ public class Manual {
         int numero1=11;
         int numero2=11;
         int suma;
-        boolean continuar=false;
+        
         //bucle para elegir pares o nones
         do {
             System.out.println("El jugador 1 tiene que elegir pares o nones");
             System.out.println("Escribe 1 para elegir pares y 2 para elegir nones");
             try{
             eleccion = entradaTeclado.nextInt();
-            continuar=true;
             }catch(InputMismatchException ime){
                 System.out.println("Valor introducido no valido");
                 entradaTeclado.nextLine();
             }
-        } while ((eleccion < 1 || eleccion > 2)||continuar==false);
+        } while (eleccion < 1 || eleccion > 2);
         //bucle para elegir cuantos dedos saca el jugador 1
-        continuar=false;
+        
         do {
             System.out.println("Jugador 1, escribe del 0 10 cuantos dedos enseñas:");
             try{
             numero1 = entradaTeclado.nextInt();
-            continuar=true;
+            
             }catch(InputMismatchException ime){
                 System.out.println("Valor introducido no valido");
                 entradaTeclado.nextLine();
             }
-        } while ((numero1 > 10 || numero1 < 0)||continuar==false);
-        continuar=false;
+        } while (numero1 > 10 || numero1 < 0);
+        
         //bucle para elegir cuantos dedos saca el jugador 2
         do {
             System.out.println("Jugador 2, escribe del 0 10 cuantos dedos enseñas:");
             try{
             numero2 = entradaTeclado.nextInt();
-            continuar=true;
+            
             }catch(InputMismatchException ime){
                 System.out.println("Valor introducido no valido");
                 entradaTeclado.nextLine();
             }
-        } while ((numero2 > 10 || numero2 < 0)||continuar==false);
+        } while (numero2 > 10 || numero2 < 0);
         //suma de numeros totales
         suma = numero1 + numero2;
         //salida por pantalla para recordar lo que se ha elegido
